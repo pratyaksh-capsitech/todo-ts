@@ -20,11 +20,10 @@ const Input = () => {
           title: text,
           description: description,
           completed: false,
-          creationAt: new Date().toISOString(),
           createdAt: new Date().toISOString(),
         }),
       );
-      toast("Task added!", {
+      toast.success("Task added!", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -35,6 +34,8 @@ const Input = () => {
         theme: "light",
         transition: Bounce,
       });
+    } else{
+      toast.error("todo can't be Empty")
     }
     setText("");
     setDescription("");
